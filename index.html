@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZoneAds AI — Bulk Ads &amp; Performance Automation for TikTok</title>
+  <meta name="description" content="ZoneAds AI is a private media-buying platform and bulk advertising engine. Organize creatives, launch multi-account TikTok ad campaigns, track per-creative ROAS, and scale winners.">
+  <link rel="canonical" href="https://zoneadsai.com/">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="ZoneAds AI — Bulk Ads &amp; Performance Automation for TikTok">
+  <meta property="og:description" content="Launch high-volume ad tests across multiple ad accounts in seconds. Track per-creative ROAS and scale winning campaigns.">
+  <meta property="og:url" content="https://zoneadsai.com/">
+  <meta property="og:image" content="https://cdn.dribbble.com/userupload/43049316/file/original-3b1997dc72d626aedf399a19a9ce2516.png?resize=400x0">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ZoneAds AI — Bulk Ads &amp; Performance Automation for TikTok">
+  <meta name="twitter:description" content="Launch high-volume ad tests across multiple ad accounts in seconds. Track per-creative ROAS and scale winning campaigns.">
+  <meta name="twitter:image" content="https://cdn.dribbble.com/userupload/43049316/file/original-3b1997dc72d626aedf399a19a9ce2516.png?resize=400x0">
+  <meta name="theme-color" content="#0a0b0d">
+
+  <!-- Fonts: Archivo (Display), Inter (Sans), JetBrains Mono (Tech/KPIs) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="bg-mesh"></div>
+
+  <!-- Navigation -->
+  <header class="nav">
+    <div class="nav-in">
+      <a class="brand" href="/" aria-label="ZoneAds AI Home">
+        <div class="brand-icon">
+          <svg viewBox="0 0 32 32" fill="none">
+            <path d="M18 4.5L7.5 17.5H16L14 27.5L24.5 14.5H16L18 4.5Z" fill="#dcc489"/>
+          </svg>
+        </div>
+        <span>ZoneAds <span style="color:var(--gold-hi);">AI</span></span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#workflow">Workflow</a>
+        <a href="#simulator">Bulk Engine</a>
+        <a href="#architecture">How It Works</a>
+        <a href="#security">API &amp; Security</a>
+        <a href="#faq">FAQ</a>
+        <a href="#access">Access</a>
+      </nav>
+
+      <div class="nav-r">
+        <span class="badge-tag">TikTok API Ready</span>
+        <button class="btn btn-quiet" data-open-modal>Log in</button>
+        <button class="btn btn-gold btn-sm" data-open-modal>Request Access</button>
+        <button class="burger" id="burgerBtn" aria-label="Toggle navigation menu" aria-expanded="false">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mob-menu" id="mobMenu">
+      <a href="#workflow">Workflow</a>
+      <a href="#simulator">Bulk Engine</a>
+      <a href="#architecture">How It Works</a>
+      <a href="#security">API &amp; Security</a>
+      <a href="#faq">FAQ</a>
+      <a href="#access">Request Access</a>
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="/terms.html">Terms of Service</a>
+      <a href="#" data-open-modal style="color:var(--gold-hi); font-weight:600;">Log in &rarr;</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="wrap">
+        <p class="eyebrow rv">TikTok Bulk Advertising &amp; Workflow Automation</p>
+        <h1 class="rv">A cleaner way to <em>bulk launch and scale</em> your ads.</h1>
+        <p class="hero-sub rv">
+          ZoneAds AI helps performance media buyers organize hundreds of creatives, launch high-volume tests across multiple ad accounts in seconds, track per-creative ROAS, and scale winners — without messy spreadsheets or manual setup.
+        </p>
+
+        <div class="hero-cta rv">
+          <button class="btn btn-gold" data-open-modal>Request Early Access</button>
+          <a class="btn btn-line" href="#simulator">Explore Live Engine</a>
+        </div>
+
+        <p class="hero-aud rv">
+          <span class="hero-aud-dot"></span>
+          Engineered for performance advertisers, TikTok media buyers, and affiliate media teams running scale.
+        </p>
+
+        <!-- Live Dashboard Still Component -->
+        <div class="still rv">
+          <div class="still-bar">
+            <div class="still-dots">
+              <span class="still-dot"></span>
+              <span class="still-dot"></span>
+              <span class="still-dot"></span>
+            </div>
+            <span class="still-title mono">zoneads.ai / live-engine / batch-cluster</span>
+            <span class="still-chip">
+              <span style="width:5px; height:5px; border-radius:50%; background:var(--ok);"></span>
+              TikTok API v1.3 Connected
+            </span>
+          </div>
+
+          <div class="still-kpis">
+            <div class="still-kpi">
+              <div class="still-kpi-l">Total Spend</div>
+              <div class="still-kpi-v">$14,820</div>
+              <div class="still-kpi-d">+12.4% vs prev</div>
+            </div>
+            <div class="still-kpi">
+              <div class="still-kpi-l">Tracked Revenue</div>
+              <div class="still-kpi-v">$28,450</div>
+              <div class="still-kpi-d">+18.2% vs prev</div>
+            </div>
+            <div class="still-kpi">
+              <div class="still-kpi-l">Net Profit</div>
+              <div class="still-kpi-v g">+$13,630</div>
+              <div class="still-kpi-d">+22.7% margin</div>
+            </div>
+            <div class="still-kpi">
+              <div class="still-kpi-l">Blended ROAS</div>
+              <div class="still-kpi-v">1.92x</div>
+              <div class="still-kpi-d">+0.14x target</div>
+            </div>
+            <div class="still-kpi">
+              <div class="still-kpi-l">Active Ad Sets</div>
+              <div class="still-kpi-v">248</div>
+              <div class="still-kpi-d">16 Accounts</div>
+            </div>
+          </div>
+
+          <!-- Animated Performance Bars -->
+          <div class="bars rv" aria-hidden="true">
+            <div class="bar-col"><div class="bar bar-spd" style="height:44%"></div><div class="bar bar-rev" style="height:76%"></div></div>
+            <div class="bar-col"><div class="bar bar-spd" style="height:48%"></div><div class="bar bar-rev" style="height:84%"></div></div>
+            <div class="bar-col"><div class="bar bar-spd" style="height:52%"></div><div class="bar bar-rev" style="height:89%"></div></div>
+            <div class="bar-col"><div class="bar bar-spd" style="height:46%"></div><div class="bar bar-rev" style="height:78%"></div></div>
+            <div class="bar-col"><div class="bar bar-spd" style="height:55%"></div><div class="bar bar-rev" style="height:92%"></div></div>
+            <div class="bar-col"><div class="bar bar-spd" style="height:50%"></div><div class="bar bar-rev" style="height:86%"></div></div>
+            <div class="bar-col"><div class="bar bar-spd" style="height:58%"></div><div class="bar bar-rev" style="height:98%"></div></div>
+            <div class="bar-col"><div class="bar bar-spd" style="height:47%"></div><div class="bar bar-rev" style="height:81%"></div></div>
+            <div class="bar-col"><div class="bar bar-spd" style="height:54%"></div><div class="bar bar-rev" style="height:91%"></div></div>
+            <div class="bar-col"><div class="bar bar-spd" style="height:59%"></div><div class="bar bar-rev" style="height:100%"></div></div>
+            <div class="bar-col"><div class="bar bar-spd" style="height:51%"></div><div class="bar bar-rev" style="height:88%"></div></div>
+            <div class="bar-col"><div class="bar bar-spd" style="height:49%"></div><div class="bar bar-rev" style="height:82%"></div></div>
+            <div class="bar-col"><div class="bar bar-spd" style="height:56%"></div><div class="bar bar-rev" style="height:94%"></div></div>
+            <div class="bar-col"><div class="bar bar-spd" style="height:58%"></div><div class="bar bar-rev" style="height:97%"></div></div>
+          </div>
+
+          <!-- Live Rows Sample -->
+          <div class="still-rows">
+            <div class="still-row">
+              <span class="dot-ok"></span>
+              <span class="n">Spark_Hook03_FastPaced_US</span>
+              <span class="tag">SPARK AD</span>
+              <span class="s">$4,120</span>
+              <span class="r">2.28x</span>
+            </div>
+            <div class="still-row">
+              <span class="dot-ok"></span>
+              <span class="n">UGC_Review_Reaction_VariantB</span>
+              <span class="tag">DIRECT</span>
+              <span class="s">$3,480</span>
+              <span class="r">1.94x</span>
+            </div>
+            <div class="still-row">
+              <span class="dot-warn"></span>
+              <span class="n">ProblemSolution_CleanCut_v1</span>
+              <span class="tag">AUTO-PAUSED</span>
+              <span class="s">$450</span>
+              <span class="r">0.82x</span>
+            </div>
+            <div class="still-row">
+              <span class="dot-ok"></span>
+              <span class="n">Unboxing_Authentic_Creator08</span>
+              <span class="tag">SPARK AD</span>
+              <span class="s">$2,890</span>
+              <span class="r">2.05x</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Workflow Section -->
+    <section class="sec" id="workflow">
+      <div class="wrap">
+        <div class="sec-head rv">
+          <p class="eyebrow">The System</p>
+          <div>
+            <h2>Four pillars of high-volume ad testing.</h2>
+            <p>
+              ZoneAds AI provides the automated workflow infrastructure for creative launching, multi-account distribution, and attribution. You maintain full ownership of your accounts and budgets.
+            </p>
+          </div>
+        </div>
+
+        <div class="spec">
+          <!-- 01 -->
+          <div class="spec-row rv">
+            <div class="spec-n">01</div>
+            <div>
+              <div class="spec-t">Organize &amp; Tag Creatives</div>
+              <p class="spec-b">
+                Upload batches of videos, authorize TikTok Spark Ad codes in seconds, and tag creatives by angle, creator, and offer.
+              </p>
+            </div>
+            <ul class="spec-l">
+              <li>Batch upload 50+ video variations</li>
+              <li>Instant TikTok Spark Ads authorization</li>
+              <li>Centralized asset library across offers</li>
+            </ul>
+          </div>
+
+          <!-- 02 -->
+          <div class="spec-row rv">
+            <div class="spec-n">02</div>
+            <div>
+              <div class="spec-t">Bulk Multi-Account Launch</div>
+              <p class="spec-b">
+                Build a campaign preset once and launch hundreds of tailored ad groups across multiple ad accounts simultaneously.
+              </p>
+            </div>
+            <ul class="spec-l">
+              <li>One-click campaign generation matrix</li>
+              <li>Multi-account dispatch via TikTok API</li>
+              <li>Automated naming conventions &amp; UTM tags</li>
+            </ul>
+          </div>
+
+          <!-- 03 -->
+          <div class="spec-row rv">
+            <div class="spec-n">03</div>
+            <div>
+              <div class="spec-t">Granular Attribution &amp; Postback</div>
+              <p class="spec-b">
+                Sync ad spend with incoming revenue postbacks from your tracker to view true profit per video creative, not just per campaign.
+              </p>
+            </div>
+            <ul class="spec-l">
+              <li>Real-time Server-to-Server (S2S) postback sync</li>
+              <li>True creative-level ROAS &amp; EPC metrics</li>
+              <li>No reliance on broken third-party cookies</li>
+            </ul>
+          </div>
+
+          <!-- 04 -->
+          <div class="spec-row rv">
+            <div class="spec-n">04</div>
+            <div>
+              <div class="spec-t">Automate Scaling &amp; Stop Bleeders</div>
+              <p class="spec-b">
+                Automatically duplicate winning ad groups and enforce automated safety rules to kill low-performing ads before budget is wasted.
+              </p>
+            </div>
+            <ul class="spec-l">
+              <li>Instant 1-click winner duplication</li>
+              <li>Custom auto-pause rules on spend/CPA limits</li>
+              <li>Eliminate manual daily campaign maintenance</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Bulk Engine Simulator -->
+    <section class="sec" id="simulator" style="padding-top: 0;">
+      <div class="wrap">
+        <div class="sec-head rv">
+          <p class="eyebrow">Engine Interactive</p>
+          <div>
+            <h2>How the bulk matrix works in practice.</h2>
+            <p>Click through the 4 stages below to inspect the automated pipeline from asset ingestion to live API execution.</p>
+          </div>
+        </div>
+
+        <div class="interactive-card rv">
+          <div class="interactive-header">
+            <div class="interactive-title">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--gold-hi)">
+                <path d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+              <span>ZoneAds AI Pipeline Orchestrator</span>
+            </div>
+            <span class="mono" style="font-size: 11.5px; color: var(--t3);">STATUS: ALL SYSTEMS NOMINAL</span>
+          </div>
+
+          <div class="interactive-steps">
+            <div class="step-box" style="border-color: var(--gold); cursor: pointer;">
+              <div class="step-num">Step 01</div>
+              <div class="step-name">1. Creatives &amp; Spark</div>
+              <div class="step-desc">Tag videos &amp; TikTok Spark auth codes.</div>
+            </div>
+            <div class="step-box" style="cursor: pointer;">
+              <div class="step-num">Step 02</div>
+              <div class="step-name">2. Matrix Preset</div>
+              <div class="step-desc">Targeting, budgets &amp; multi-account rules.</div>
+            </div>
+            <div class="step-box" style="cursor: pointer;">
+              <div class="step-num">Step 03</div>
+              <div class="step-name">3. Bulk API Launch</div>
+              <div class="step-desc">Automated batch dispatch to TikTok API.</div>
+            </div>
+            <div class="step-box" style="cursor: pointer;">
+              <div class="step-num">Step 04</div>
+              <div class="step-name">4. ROAS &amp; Auto-Kill</div>
+              <div class="step-desc">Live attribution &amp; automated scaling.</div>
+            </div>
+          </div>
+
+          <div style="margin-top: 24px; background: #07080a; border: 1px solid var(--rule); border-radius: 4px; padding: 18px 20px;">
+            <div class="mono" style="font-size: 11px; color: var(--t3); margin-bottom: 8px;">TERMINAL OUTPUT:</div>
+            <pre class="mono" id="simulatorOutput" style="font-size: 13px; line-height: 1.6; color: var(--t1); white-space: pre-wrap;"><span style="color: #c9a961;">[STEP 1: BULK CREATIVES]</span> Loaded 48 MP4 video creatives &amp; 120 ad copy variants.
+Tags mapped: Offer #108, Spark IDs verified, Aspect: 9:16 vertical.</pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works / Comparison Matrix -->
+    <section class="sec" id="architecture" style="padding-top: 0;">
+      <div class="wrap">
+        <div class="sec-head rv">
+          <p class="eyebrow">Self-Serve Infrastructure</p>
+          <div>
+            <h2>You run the ads. ZoneAds AI runs the system.</h2>
+            <p>
+              ZoneAds AI is a pure self-serve software platform. We never touch your ad funds, manage your media buying, or charge percentage fees on ad spend.
+            </p>
+          </div>
+        </div>
+
+        <div class="led rv">
+          <div class="led-col">
+            <h3>You Bring</h3>
+            <ul>
+              <li><span class="icon-ok">&bull;</span> Your own TikTok ad accounts</li>
+              <li><span class="icon-ok">&bull;</span> Your own ad budget &amp; payment methods</li>
+              <li><span class="icon-ok">&bull;</span> Your own video creatives &amp; Spark codes</li>
+              <li><span class="icon-ok">&bull;</span> Your strategic decisions on what to test</li>
+            </ul>
+          </div>
+          <div class="led-col">
+            <h3>ZoneAds AI Brings</h3>
+            <ul>
+              <li><span class="icon-ok">&bull;</span> Bulk creative manager &amp; Spark code queue</li>
+              <li><span class="icon-ok">&bull;</span> Multi-account 1-click launch automation</li>
+              <li><span class="icon-ok">&bull;</span> Real-time creative-level ROAS dashboard</li>
+              <li><span class="icon-ok">&bull;</span> Rule-based auto-pilot to pause unprofitable ads</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Built For -->
+    <section class="sec" style="padding-top: 0;">
+      <div class="wrap">
+        <div class="sec-head rv">
+          <p class="eyebrow">Target Audience</p>
+          <div>
+            <h2>Built for media buyers who value speed.</h2>
+          </div>
+        </div>
+
+        <div class="who">
+          <div class="who-row rv">
+            <h3>Solo Media Buyers &amp; Affiliates</h3>
+            <p>
+              You need a disciplined testing system: launching 30–50 creative angles daily without spending 4 hours clicking through TikTok Ads Manager. ZoneAds AI compresses your setup time to under 3 minutes.
+            </p>
+          </div>
+          <div class="who-row rv">
+            <h3>Performance Teams &amp; Agencies</h3>
+            <p>
+              You manage multiple brands, multiple ad accounts, and hundreds of creator assets each week. ZoneAds AI provides the centralized asset library, preset templates, and unified performance dashboard.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TikTok API & Security Architecture -->
+    <section class="sec" id="security" style="padding-top: 0;">
+      <div class="wrap">
+        <div class="sec-head rv">
+          <p class="eyebrow">API &amp; Security</p>
+          <div>
+            <h2>Built on official developer standards.</h2>
+            <p>
+              ZoneAds AI connects directly to the official TikTok Commercial API using secure OAuth 2.0 protocol. Your account security and data privacy remain fully under your control.
+            </p>
+          </div>
+        </div>
+
+        <div class="interactive-steps rv" style="margin-top: 48px;">
+          <div class="step-box">
+            <div class="step-num">SECURITY 01</div>
+            <div class="step-name">Official OAuth 2.0</div>
+            <div class="step-desc">Authorize access securely through TikTok's official login portal. We never see or store your TikTok account passwords.</div>
+          </div>
+          <div class="step-box">
+            <div class="step-num">SECURITY 02</div>
+            <div class="step-name">Direct Account Isolation</div>
+            <div class="step-desc">All campaigns are created directly in your own TikTok Ads Manager. You retain 100% ownership and immediate manual override.</div>
+          </div>
+          <div class="step-box">
+            <div class="step-num">SECURITY 03</div>
+            <div class="step-name">AES-256 Encryption</div>
+            <div class="step-desc">All API communication and stored tokens are encrypted at rest and in transit following SOC2-grade security standards.</div>
+          </div>
+          <div class="step-box">
+            <div class="step-num">SECURITY 04</div>
+            <div class="step-name">Instant Revocation</div>
+            <div class="step-desc">Revoke access at any moment with one click directly in your TikTok Developer App center or ZoneAds AI settings.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="sec" id="faq" style="padding-top: 0;">
+      <div class="wrap">
+        <div class="sec-head rv">
+          <p class="eyebrow">Questions</p>
+          <div>
+            <h2>Frequently asked questions.</h2>
+          </div>
+        </div>
+
+        <div class="faq rv">
+          <details>
+            <summary>Does ZoneAds AI manage or run ads on my behalf?</summary>
+            <div class="faq-a">
+              No. ZoneAds AI is an automated productivity software and workflow tool for media buyers. You launch ads from your own ad accounts with your own budget, and you control all targeting, spend, and creative decisions.
+            </div>
+          </details>
+
+          <details>
+            <summary>How does the TikTok API integration work?</summary>
+            <div class="faq-a">
+              ZoneAds AI connects to your TikTok Ad Accounts via TikTok's official Commercial API using OAuth 2.0. Once authorized, the platform automates repetitive campaign creation tasks, uploads creative assets, and retrieves performance statistics for your private dashboard.
+            </div>
+          </details>
+
+          <details>
+            <summary>Whose payment methods and ad accounts are used?</summary>
+            <div class="faq-a">
+              Yours. ZoneAds AI never processes ad spend payments or charges commissions on your ad spend. All billing for ad delivery occurs directly between you and TikTok Ads.
+            </div>
+          </details>
+
+          <details>
+            <summary>Can I track revenue from my affiliate trackers?</summary>
+            <div class="faq-a">
+              Yes. ZoneAds AI supports standard Server-to-Server (S2S) postbacks from trackers like Voluum, RedTrack, BeMob, Keitaro, as well as direct webhook payloads from custom e-commerce checkout platforms.
+            </div>
+          </details>
+
+          <details>
+            <summary>How do I request early access?</summary>
+            <div class="faq-a">
+              ZoneAds AI is currently in early private beta for verified media buyers and agencies. Click "Request Access" to submit your application or message us directly via Telegram or Discord.
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Access & Contact Section -->
+    <section class="sec" id="access" style="padding-top: 0;">
+      <div class="wrap">
+        <div class="sec-head rv">
+          <p class="eyebrow">Get Started</p>
+          <div>
+            <h2>Request platform access.</h2>
+            <p>Join the private beta for ZoneAds AI and streamline your bulk ad workflows.</p>
+          </div>
+        </div>
+
+        <div class="access rv">
+          <div></div>
+          <div class="access-rows">
+            <a class="access-row" href="#" data-open-modal>
+              <span class="k">Web Form</span>
+              <span class="v">Submit Beta Application</span>
+              <span class="go">Apply Now &rarr;</span>
+            </a>
+            <a class="access-row" href="https://t.me/zoneadsai" target="_blank" rel="noopener">
+              <span class="k">Telegram</span>
+              <span class="v">@ZoneAdsAI</span>
+              <span class="go">t.me/zoneadsai &rarr;</span>
+            </a>
+            <div class="access-row">
+              <span class="k">Email</span>
+              <span class="v">support@zoneadsai.com</span>
+              <span class="go">Send Email</span>
+            </div>
+            <a class="access-row" href="#" data-open-modal>
+              <span class="k">Existing</span>
+              <span class="v">Already have access?</span>
+              <span class="go" style="color:var(--gold-hi);">Sign In &rarr;</span>
+            </a>
+            <p class="access-note">ZoneAds AI is a specialized tool for verified media buying teams. Inquiries reviewed within 24 hours.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="foot">
+    <div class="foot-in">
+      <a class="brand" style="font-size:14px;" href="/">
+        <div class="brand-icon" style="width:22px; height:22px; border-radius:5px;">
+          <svg viewBox="0 0 32 32" style="width:12px; height:12px;" fill="none">
+            <path d="M18 4.5L7.5 17.5H16L14 27.5L24.5 14.5H16L18 4.5Z" fill="#dcc489"/>
+          </svg>
+        </div>
+        <span>ZoneAds AI</span>
+      </a>
+
+      <nav class="foot-links" aria-label="Legal and Documentation">
+        <a href="/terms.html">Terms of Service</a>
+        <a href="/privacy.html">Privacy Policy</a>
+        <a href="/privacy.html#tiktok-data">TikTok API Compliance</a>
+        <a href="/terms.html#disclaimer">Earnings Disclaimer</a>
+        <a href="/privacy.html#contact">Contact</a>
+      </nav>
+
+      <span class="foot-c">&copy; 2026 ZoneAds AI (zoneadsai.com). All rights reserved.</span>
+    </div>
+  </footer>
+
+  <!-- Modal -->
+  <div class="modal-overlay" id="accessModal">
+    <div class="modal-box">
+      <button class="modal-close" data-close-modal aria-label="Close modal">&times;</button>
+      <div class="modal-title">Request Early Beta Access</div>
+      <div class="modal-sub">Tell us about your media buying setup to get your invitation link.</div>
+
+      <form id="accessForm">
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" required placeholder="Alex Turner">
+        </div>
+
+        <div class="form-group">
+          <label for="email">Work Email</label>
+          <input type="email" id="email" required placeholder="alex@company.com">
+        </div>
+
+        <div class="form-group">
+          <label for="handle">Telegram / Discord Handle</label>
+          <input type="text" id="handle" placeholder="@alex_ads">
+        </div>
+
+        <div class="form-group">
+          <label for="spend">Estimated Monthly Ad Spend</label>
+          <select id="spend">
+            <option value="5k-25k">$5,000 &ndash; $25,000 / mo</option>
+            <option value="25k-100k" selected>$25,000 &ndash; $100,000 / mo</option>
+            <option value="100k+">$100,000+ / mo</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-gold" style="width: 100%; margin-top: 10px;">Submit Application</button>
+      </form>
+
+      <div id="formSuccess" style="display: none; text-align: center; padding: 20px 0;">
+        <div style="color: var(--ok); font-size: 32px; margin-bottom: 12px;">&check;</div>
+        <h3 style="font-size: 18px; margin-bottom: 8px;">Application Received</h3>
+        <p style="font-size: 14px; color: var(--t2);">Thank you! Our onboarding team will review your application and reach out within 24 hours.</p>
+        <button class="btn btn-line btn-sm" data-close-modal style="margin-top: 20px;">Done</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
