@@ -3,173 +3,58 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>TikTok Authentication — ZoneAds AI</title>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; form-action 'self' mailto:; img-src 'self' data:; script-src 'self'; style-src 'self'; font-src 'self'; connect-src 'self'; object-src 'none'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>TikTok Ads Authorization — ZoneAds AI</title>
   <meta name="robots" content="noindex">
   <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
-  <style>
-    :root {
-      --bg-main: #0B1120;
-      --bg-card: #111827;
-      --text-main: #F3F4F6;
-      --text-muted: #D1D5DB;
-      --text-blue: #60A5FA;
-      --btn-primary: #38BDF8;
-      --btn-primary-text: #0F172A;
-      --btn-secondary: transparent;
-      --border-color: #374151;
-      --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    }
-    
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      background-color: var(--bg-main);
-      color: var(--text-main);
-      font-family: var(--font-family);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-height: 100vh;
-      padding: 40px 20px;
-    }
-
-    .brand-header {
-      width: 100%;
-      max-width: 650px;
-      display: flex;
-      align-items: center;
-      margin-bottom: 40px;
-      font-weight: bold;
-      font-size: 20px;
-    }
-
-    .brand-logo {
-      width: 32px;
-      height: 32px;
-      background-color: var(--btn-primary);
-      color: var(--btn-primary-text);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 8px;
-      margin-right: 12px;
-      font-weight: 800;
-    }
-
-    .auth-card {
-      background-color: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: 16px;
-      padding: 40px;
-      width: 100%;
-      max-width: 650px;
-    }
-
-    .subtitle {
-      color: var(--btn-primary);
-      font-size: 14px;
-      font-weight: 600;
-      margin-bottom: 20px;
-    }
-
-    .title {
-      font-size: 36px;
-      font-weight: 800;
-      line-height: 1.1;
-      margin-bottom: 30px;
-      letter-spacing: -0.5px;
-    }
-
-    .message {
-      color: var(--text-muted);
-      font-size: 16px;
-      line-height: 1.6;
-      margin-bottom: 24px;
-    }
-
-    .btn-group {
-      display: flex;
-      gap: 16px;
-      margin-top: 32px;
-      margin-bottom: 40px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      padding: 12px 24px;
-      border-radius: 8px;
-      font-size: 15px;
-      font-weight: 600;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-block;
-      transition: opacity 0.2s;
-    }
-
-    .btn:hover {
-      opacity: 0.9;
-    }
-
-    .btn-primary {
-      background-color: var(--btn-primary);
-      color: var(--btn-primary-text);
-      border: none;
-    }
-
-    .btn-secondary {
-      background-color: var(--btn-secondary);
-      color: var(--text-main);
-      border: 1px solid var(--border-color);
-    }
-
-    .footer-note {
-      color: #9CA3AF;
-      font-size: 13px;
-    }
-
-    @media (max-width: 600px) {
-      .auth-card {
-        padding: 30px 20px;
-      }
-      .title {
-        font-size: 28px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="../../styles.css">
+  <script src="../../app.js" defer></script>
 </head>
 <body>
-  
-  <div class="brand-header">
-    <div class="brand-logo">Z</div>
-    ZoneAds
-  </div>
-
-  <div class="auth-card">
-    <div class="subtitle">TikTok advertiser authorization · Reserved</div>
-    
-    <h1 class="title">Sign in to connect this<br>advertiser.</h1>
-    
-    <p class="message">
-      The authorization could not be attached to a signed-in ZoneAds AI account. ZoneAds AI has not exchanged authorization codes or enabled account access through this page.
-    </p>
-    
-    <p class="message">
-      Sign in to ZoneAds AI in this browser, open the TikTok Ads workspace, and start the connection again. You can return to the service page for availability information or contact our support team.
-    </p>
-    
-    <div class="btn-group">
-      <a href="../" class="btn btn-primary">Back to TikTok Ads</a>
-      <a href="../../support/" class="btn btn-secondary">Contact support</a>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="shell nav-wrap">
+      <a class="brand" href="../../" aria-label="ZoneAds AI home"><img src="../../logo-64.png" alt="" width="31" height="31"><span>ZoneAds <span class="brand-mark">AI</span></span></a>
+      <nav class="main-nav" aria-label="Primary navigation">
+        <a href="../../#product">Product</a><a href="../">TikTok Ads</a><a href="../#permissions">Permissions</a><a href="../../support/">Support</a>
+      </nav>
+      <div class="nav-actions"><a class="button button-ghost" href="../../support/">Sign in</a><a class="button button-gold" href="mailto:support@zoneadsai.com?subject=Create%20a%20ZoneAds%20account">Create account <span class="arrow">→</span></a></div>
+      <button class="menu-button" type="button" aria-label="Open navigation" aria-expanded="false" data-menu-button><span></span></button>
     </div>
-    
-    <div class="footer-note">
-      Do not share authorization codes, tokens, or the full callback URL with support.
-    </div>
-  </div>
+    <nav class="mobile-nav" aria-label="Mobile navigation" data-mobile-nav>
+      <a href="../../#product">Product</a><a href="../">TikTok Ads</a><a href="../#permissions">Permissions</a><a href="../../support/">Support</a><a href="../../privacy.html#tiktok">Data policy</a><a href="../../support/">Sign in</a><a class="button button-gold" href="mailto:support@zoneadsai.com?subject=Create%20a%20ZoneAds%20account">Create account</a>
+    </nav>
+  </header>
 
+  <main id="main">
+    <section class="hero" style="min-height: 80vh; display: flex; align-items: center;">
+      <div class="shell" style="max-width: 600px; margin: 0 auto; text-align: left; padding: 60px 0;">
+        <span class="eyebrow" style="margin-bottom: 20px; display: block;">TikTok advertiser authorization · Reserved</span>
+        <h1 style="font-size: clamp(32px, 5vw, 42px); font-weight: 700; margin-bottom: 24px; line-height: 1.1;">Sign in to connect this advertiser.</h1>
+        <p style="color: #b9bec7; font-size: 17px; line-height: 1.6; margin-bottom: 24px;">The authorization could not be attached to a signed-in ZoneAds AI account. ZoneAds AI has not exchanged authorization codes or enabled account access through this page.</p>
+        <p style="color: #b9bec7; font-size: 17px; line-height: 1.6; margin-bottom: 32px;">Sign in to ZoneAds AI in this browser, open the TikTok Ads workspace, and start the connection again. You can return to the service page for availability information or contact our support team.</p>
+        
+        <div style="display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 40px;">
+          <a class="button button-gold" href="../">Back to TikTok Ads</a>
+          <a class="button button-ghost" href="../../support/">Contact support</a>
+        </div>
+        
+        <p style="color: #71717a; font-size: 14px;">Do not share authorization codes, tokens, or the full callback URL with support.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell">
+      <div class="footer-top">
+        <div class="footer-intro"><a class="brand" href="../../"><img src="../../logo-64.png" alt="" width="31" height="31"><span>ZoneAds <span class="brand-mark">AI</span></span></a><p>Independent campaign operations software for authorized performance-marketing teams.</p></div>
+        <div class="footer-col"><strong>Product</strong><a href="../../#product">Workspace</a><a href="../">TikTok Ads</a><a href="../#workflow">Campaign workflow</a></div>
+        <div class="footer-col"><strong>Data</strong><a href="../../privacy.html">Privacy Policy</a><a href="../../account-deletion/">Account deletion</a><a href="../#permissions">Permissions</a></div>
+        <div class="footer-col"><strong>Company</strong><a href="../../terms.html">Terms of Service</a><a href="../../support/">Support</a><a href="mailto:support@zoneadsai.com">support@zoneadsai.com</a></div>
+      </div>
+      <div class="footer-bottom"><span>© 2026 ZoneAds AI. All rights reserved.</span><span>ZoneAds AI is independent of TikTok and is not endorsed by or affiliated with TikTok.</span></div>
+    </div>
+  </footer>
 </body>
 </html>
