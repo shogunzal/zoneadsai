@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TikTok Authentication — ZoneAds AI</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../styles.css">
+  <script src="../../app.js" defer></script>
+  <style>
+    .auth-container {
+      max-width: 600px;
+      margin: 100px auto;
+      padding: 40px;
+      text-align: center;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+    .auth-icon {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+    .auth-title {
+      font-size: 24px;
+      margin-bottom: 16px;
+      color: var(--text-base);
+    }
+    .auth-message {
+      color: var(--text-muted);
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+    .loading-spinner {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      border: 3px solid rgba(255,255,255,0.1);
+      border-radius: 50%;
+      border-top-color: var(--accent-gold);
+      animation: spin 1s ease-in-out infinite;
+      margin-bottom: 20px;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell nav-wrap">
+      <a class="brand" href="../../" aria-label="ZoneAds AI home">
+        <img src="../../logo-64.png" alt="" width="31" height="31">
+        <span>ZoneAds <span class="brand-mark">AI</span></span>
+      </a>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="shell">
+      <div class="auth-container" id="auth-ui">
+        <div class="loading-spinner"></div>
+        <h1 class="auth-title">Processing Authentication...</h1>
+        <p class="auth-message">Please wait while we securely connect your TikTok Ads account.</p>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const authCode = urlParams.get('auth_code');
+      const error = urlParams.get('error');
+      
+      const authUi = document.getElementById('auth-ui');
+      
+      setTimeout(() => {
+        if (error) {
+          authUi.innerHTML = `
+            <div class="auth-icon">❌</div>
+            <h1 class="auth-title">Authentication Failed</h1>
+            <p class="auth-message">There was a problem connecting your TikTok Ads account. <br>Error: ${error}</p>
+            <a href="../" class="button button-ghost">Return to TikTok Ads page</a>
+          `;
+        } else if (authCode) {
+          authUi.innerHTML = `
+            <div class="auth-icon">✅</div>
+            <h1 class="auth-title">Authentication Successful!</h1>
+            <p class="auth-message">Your TikTok Ads account has been securely connected to ZoneAds AI. You can now close this window and return to the main dashboard.</p>
+            <button onclick="window.close()" class="button button-gold">Close Window</button>
+          `;
+          
+          // In a real application, you would send this authCode to your backend here:
+          // fetch('/api/auth/tiktok', { method: 'POST', body: JSON.stringify({ code: authCode }) });
+          
+        } else {
+          authUi.innerHTML = `
+            <div class="auth-icon">⚠️</div>
+            <h1 class="auth-title">Invalid Request</h1>
+            <p class="auth-message">No authentication data found. Please try connecting your account again from the dashboard.</p>
+            <a href="../" class="button button-ghost">Return to TikTok Ads page</a>
+          `;
+        }
+      }, 1000); // Simulate a slight delay for realism
+    });
+  </script>
+</body>
+</html>
