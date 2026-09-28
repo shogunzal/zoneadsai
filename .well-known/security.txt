@@ -1,0 +1,6 @@
+Contact: mailto:support@zoneadsai.com
+Contact: https://www.zoneadsai.com/support/#security
+Policy: https://www.zoneadsai.com/support/#security
+Preferred-Languages: en
+Canonical: https://www.zoneadsai.com/.well-known/security.txt
+Expires: 2027-09-28T00:00:00.000Z
