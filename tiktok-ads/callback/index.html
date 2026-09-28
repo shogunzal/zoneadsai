@@ -6,105 +6,170 @@
   <title>TikTok Authentication — ZoneAds AI</title>
   <meta name="robots" content="noindex">
   <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="../../styles.css">
-  <script src="../../app.js" defer></script>
   <style>
-    .auth-container {
-      max-width: 600px;
-      margin: 100px auto;
+    :root {
+      --bg-main: #0B1120;
+      --bg-card: #111827;
+      --text-main: #F3F4F6;
+      --text-muted: #D1D5DB;
+      --text-blue: #60A5FA;
+      --btn-primary: #38BDF8;
+      --btn-primary-text: #0F172A;
+      --btn-secondary: transparent;
+      --border-color: #374151;
+      --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      font-family: var(--font-family);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+
+    .brand-header {
+      width: 100%;
+      max-width: 650px;
+      display: flex;
+      align-items: center;
+      margin-bottom: 40px;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    .brand-logo {
+      width: 32px;
+      height: 32px;
+      background-color: var(--btn-primary);
+      color: var(--btn-primary-text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      margin-right: 12px;
+      font-weight: 800;
+    }
+
+    .auth-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
       padding: 40px;
-      text-align: center;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 650px;
     }
-    .auth-icon {
-      font-size: 48px;
+
+    .subtitle {
+      color: var(--btn-primary);
+      font-size: 14px;
+      font-weight: 600;
       margin-bottom: 20px;
     }
-    .auth-title {
-      font-size: 24px;
-      margin-bottom: 16px;
-      color: var(--text-base);
-    }
-    .auth-message {
-      color: var(--text-muted);
+
+    .title {
+      font-size: 36px;
+      font-weight: 800;
+      line-height: 1.1;
       margin-bottom: 30px;
+      letter-spacing: -0.5px;
+    }
+
+    .message {
+      color: var(--text-muted);
+      font-size: 16px;
       line-height: 1.6;
+      margin-bottom: 24px;
     }
-    .loading-spinner {
+
+    .btn-group {
+      display: flex;
+      gap: 16px;
+      margin-top: 32px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
       display: inline-block;
-      width: 40px;
-      height: 40px;
-      border: 3px solid rgba(255,255,255,0.1);
-      border-radius: 50%;
-      border-top-color: var(--accent-gold);
-      animation: spin 1s ease-in-out infinite;
-      margin-bottom: 20px;
+      transition: opacity 0.2s;
     }
-    @keyframes spin {
-      to { transform: rotate(360deg); }
+
+    .btn:hover {
+      opacity: 0.9;
+    }
+
+    .btn-primary {
+      background-color: var(--btn-primary);
+      color: var(--btn-primary-text);
+      border: none;
+    }
+
+    .btn-secondary {
+      background-color: var(--btn-secondary);
+      color: var(--text-main);
+      border: 1px solid var(--border-color);
+    }
+
+    .footer-note {
+      color: #9CA3AF;
+      font-size: 13px;
+    }
+
+    @media (max-width: 600px) {
+      .auth-card {
+        padding: 30px 20px;
+      }
+      .title {
+        font-size: 28px;
+      }
     }
   </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="shell nav-wrap">
-      <a class="brand" href="../../" aria-label="ZoneAds AI home">
-        <img src="../../logo-64.png" alt="" width="31" height="31">
-        <span>ZoneAds <span class="brand-mark">AI</span></span>
-      </a>
-    </div>
-  </header>
+  
+  <div class="brand-header">
+    <div class="brand-logo">Z</div>
+    ZoneAds
+  </div>
 
-  <main id="main">
-    <div class="shell">
-      <div class="auth-container" id="auth-ui">
-        <div class="loading-spinner"></div>
-        <h1 class="auth-title">Processing Authentication...</h1>
-        <p class="auth-message">Please wait while we securely connect your TikTok Ads account.</p>
-      </div>
+  <div class="auth-card">
+    <div class="subtitle">TikTok advertiser authorization · Reserved</div>
+    
+    <h1 class="title">Sign in to connect this<br>advertiser.</h1>
+    
+    <p class="message">
+      The authorization could not be attached to a signed-in ZoneAds AI account. ZoneAds AI has not exchanged authorization codes or enabled account access through this page.
+    </p>
+    
+    <p class="message">
+      Sign in to ZoneAds AI in this browser, open the TikTok Ads workspace, and start the connection again. You can return to the service page for availability information or contact our support team.
+    </p>
+    
+    <div class="btn-group">
+      <a href="../" class="btn btn-primary">Back to TikTok Ads</a>
+      <a href="../../support/" class="btn btn-secondary">Contact support</a>
     </div>
-  </main>
+    
+    <div class="footer-note">
+      Do not share authorization codes, tokens, or the full callback URL with support.
+    </div>
+  </div>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const urlParams = new URLSearchParams(window.location.search);
-      const authCode = urlParams.get('auth_code');
-      const error = urlParams.get('error');
-      
-      const authUi = document.getElementById('auth-ui');
-      
-      setTimeout(() => {
-        if (error) {
-          authUi.innerHTML = `
-            <div class="auth-icon">❌</div>
-            <h1 class="auth-title">Authentication Failed</h1>
-            <p class="auth-message">There was a problem connecting your TikTok Ads account. <br>Error: ${error}</p>
-            <a href="../" class="button button-ghost">Return to TikTok Ads page</a>
-          `;
-        } else if (authCode) {
-          authUi.innerHTML = `
-            <div class="auth-icon">✅</div>
-            <h1 class="auth-title">Authentication Successful!</h1>
-            <p class="auth-message">Your TikTok Ads account has been securely connected to ZoneAds AI. You can now close this window and return to the main dashboard.</p>
-            <button onclick="window.close()" class="button button-gold">Close Window</button>
-          `;
-          
-          // In a real application, you would send this authCode to your backend here:
-          // fetch('/api/auth/tiktok', { method: 'POST', body: JSON.stringify({ code: authCode }) });
-          
-        } else {
-          authUi.innerHTML = `
-            <div class="auth-icon">⚠️</div>
-            <h1 class="auth-title">Invalid Request</h1>
-            <p class="auth-message">No authentication data found. Please try connecting your account again from the dashboard.</p>
-            <a href="../" class="button button-ghost">Return to TikTok Ads page</a>
-          `;
-        }
-      }, 1000); // Simulate a slight delay for realism
-    });
-  </script>
 </body>
 </html>
