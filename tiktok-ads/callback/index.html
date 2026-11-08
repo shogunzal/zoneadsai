@@ -91,10 +91,6 @@
             <p class="auth-message">Your TikTok Ads account has been securely connected to ZoneAds AI. You can now close this window and return to the main dashboard.</p>
             <button onclick="window.close()" class="button button-gold">Close Window</button>
           `;
-          
-          // In a real application, you would send this authCode to your backend here:
-          // fetch('/api/auth/tiktok', { method: 'POST', body: JSON.stringify({ code: authCode }) });
-          
         } else {
           authUi.innerHTML = `
             <div class="auth-icon">⚠️</div>
