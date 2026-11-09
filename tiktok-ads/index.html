@@ -4,12 +4,242 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  <title>Direct Advertiser Workspace — ZoneAds In-House Media Operations</title>
-  <meta name="description" content="Proprietary campaign operations workspace used by ZoneAds media buyers to manage direct advertising campaigns across authorized TikTok Ads accounts.">
+  <title>ZoneAds Media Desk — Personal Direct Advertiser Workspace</title>
+  <meta name="description" content="Proprietary in-house campaign operations workspace built and operated exclusively by Faisal Yahaya (ZoneAds) to manage our direct TikTok advertising campaigns.">
   <link rel="canonical" href="./">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../styles.css">
-  <script src="../app.js" defer></script>
+  <style>
+    /* ZoneAds In-House Dashboard Mockup Styling */
+    .dashboard-preview {
+      margin-top: 40px;
+      background: #0b0d0f;
+      border: 1px solid #292e33;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 30px 90px rgba(0, 0, 0, 0.7);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    .db-header {
+      background: #121518;
+      border-bottom: 1px solid #292e33;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .db-badge-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .db-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #79d7ab;
+      box-shadow: 0 0 10px rgba(121, 215, 171, 0.6);
+      display: inline-block;
+    }
+    .db-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: #f0eee8;
+      letter-spacing: -0.01em;
+    }
+    .db-pill {
+      font-size: 11px;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 6px;
+      background: rgba(220, 196, 137, 0.12);
+      color: #dcc489;
+      border: 1px solid rgba(220, 196, 137, 0.3);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .db-pill-green {
+      background: rgba(121, 215, 171, 0.12);
+      color: #79d7ab;
+      border-color: rgba(121, 215, 171, 0.3);
+    }
+    .db-user {
+      font-size: 12px;
+      color: #949a9f;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .db-user strong {
+      color: #f0eee8;
+    }
+    .db-body {
+      display: grid;
+      grid-template-columns: 210px 1fr;
+      min-height: 480px;
+      background: #0b0d0f;
+    }
+    .db-sidebar {
+      background: #101215;
+      border-right: 1px solid #202428;
+      padding: 18px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .db-sidebar-label {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #60666d;
+      letter-spacing: 0.08em;
+      padding: 8px 10px 4px;
+      margin-top: 8px;
+    }
+    .db-sidebar-label:first-child { margin-top: 0; }
+    .db-nav-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: #8c9299;
+      transition: all .15s;
+    }
+    .db-nav-item.active {
+      background: #191d21;
+      color: #f0eee8;
+      border-left: 2px solid #dcc489;
+    }
+    .db-content {
+      padding: 24px;
+      background: #0e1013;
+    }
+    .db-metrics {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+    .db-metric-card {
+      background: #14171a;
+      border: 1px solid #23282d;
+      border-radius: 10px;
+      padding: 14px 16px;
+    }
+    .db-metric-card small {
+      display: block;
+      font-size: 11px;
+      font-weight: 600;
+      color: #80868e;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 6px;
+    }
+    .db-metric-card strong {
+      display: block;
+      font-size: 20px;
+      font-weight: 800;
+      color: #f0eee8;
+      letter-spacing: -0.02em;
+    }
+    .db-metric-card span {
+      display: block;
+      font-size: 11px;
+      color: #79d7ab;
+      margin-top: 4px;
+      font-weight: 600;
+    }
+    .db-table-card {
+      background: #14171a;
+      border: 1px solid #23282d;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .db-table-head {
+      padding: 14px 18px;
+      border-bottom: 1px solid #23282d;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .db-table-head h3 {
+      font-size: 13px;
+      font-weight: 700;
+      color: #f0eee8;
+      margin: 0;
+    }
+    .db-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+      text-align: left;
+    }
+    .db-table th {
+      padding: 10px 16px;
+      background: #111316;
+      color: #68707a;
+      font-size: 10.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-bottom: 1px solid #202429;
+    }
+    .db-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid #1a1e22;
+      color: #d8d6d0;
+    }
+    .db-table tr:last-child td { border-bottom: 0; }
+    .db-table tr:hover td { background: #171b1f; }
+    .db-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 2px 7px;
+      border-radius: 5px;
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+    .db-tag-active {
+      background: rgba(121, 215, 171, 0.12);
+      color: #79d7ab;
+      border: 1px solid rgba(121, 215, 171, 0.3);
+    }
+    .db-tag-paused {
+      background: rgba(244, 154, 144, 0.12);
+      color: #f49a90;
+      border: 1px solid rgba(244, 154, 144, 0.3);
+    }
+    .db-code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      color: #dcc489;
+      font-size: 11px;
+    }
+    .notice-personal {
+      background: rgba(220, 196, 137, 0.06);
+      border: 1px solid rgba(220, 196, 137, 0.25);
+      border-radius: 12px;
+      padding: 14px 18px;
+      margin-top: 20px;
+      font-size: 13.5px;
+      line-height: 1.6;
+      color: #e5e3db;
+    }
+    .notice-personal strong {
+      color: #dcc489;
+    }
+    @media (max-width: 900px) {
+      .db-body { grid-template-columns: 1fr; }
+      .db-sidebar { display: none; }
+      .db-metrics { grid-template-columns: repeat(2, 1fr); }
+      .db-table { display: block; overflow-x: auto; }
+    }
+  </style>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -20,188 +250,276 @@
         <span>ZoneAds <span class="brand-mark">AI</span></span>
       </a>
       <nav class="main-nav" aria-label="Primary navigation">
-        <a href="../#verticals">Verticals</a>
-        <a href="../#operations">Operations</a>
-        <a href="./" aria-current="page">TikTok Ads Desk</a>
+        <a href="#workbench">Workspace Desk</a>
+        <a href="#features">Media Capabilities</a>
+        <a href="#ownership">Account Ownership</a>
+        <a href="#faq">FAQ</a>
         <a href="../support/">Contact</a>
       </nav>
       <div class="nav-actions">
+        <span class="db-pill db-pill-green">Direct Advertiser</span>
         <a class="button button-ghost" href="../privacy.html">Data Policy</a>
-        <a class="button button-gold" href="../support/">Media Inquiries <span class="arrow">→</span></a>
       </div>
       <button class="menu-button" type="button" aria-label="Open navigation" aria-expanded="false" data-menu-button><span></span></button>
     </div>
     <nav class="mobile-nav" aria-label="Mobile navigation" data-mobile-nav>
-      <a href="../#verticals">Verticals</a>
-      <a href="../#operations">Operations</a>
-      <a href="./">TikTok Ads Desk</a>
-      <a href="../support/">Contact</a>
+      <a href="#workbench">Workspace Desk</a>
+      <a href="#features">Media Capabilities</a>
+      <a href="#ownership">Account Ownership</a>
+      <a href="#faq">FAQ</a>
       <a href="../privacy.html">Data Policy</a>
-      <a class="button button-gold" href="../support/">Media Inquiries</a>
+      <a href="../support/">Contact</a>
     </nav>
   </header>
 
   <main id="main">
-    <section class="hero integration-hero">
-      <div class="shell hero-grid">
-        <div class="hero-copy rv">
-          <span class="eyebrow">Internal Media Operations · Direct Advertiser</span>
-          <h1>TikTok Ads.<br><span>Our in-house campaign desk.</span></h1>
-          <p>ZoneAds is an independent direct-response advertiser. This proprietary campaign management workspace is used exclusively by our internal media-buying team to deploy, review, and manage ad delivery across our own authorized TikTok Ads Manager accounts.</p>
-          <div class="hero-actions">
-            <a class="button button-gold" href="../support/">In-House Operations <span class="arrow">→</span></a>
-            <a class="button button-ghost" href="../privacy.html#tiktok">Data Policy</a>
-          </div>
-          <div class="notice">
-            <div><strong>Internal Tooling Only:</strong> ZoneAds operates as a direct advertiser on accounts our team owns and manages. We do not provide public access, SaaS subscriptions, or commercial services to third parties.</div>
+    <section class="hero integration-hero" style="padding-bottom: 40px;">
+      <div class="shell">
+        <div class="hero-copy rv" style="max-width: 820px; margin-inline: auto; text-align: center;">
+          <span class="eyebrow">Personal Media-Buying Workspace · Direct Advertiser</span>
+          <h1 style="font-size: clamp(38px, 5.5vw, 62px);">ZoneAds Media Desk.<br><span style="color: #dcc489;">Our personal TikTok campaign console.</span></h1>
+          <p style="font-size: 16.5px; max-width: 720px; margin-inline: auto; margin-top: 18px;">
+            This is the proprietary in-house advertising operations dashboard built and operated exclusively by <strong>Faisal Yahaya (ZoneAds)</strong> to manage, test, and scale our own direct-response campaigns on TikTok Ads Manager.
+          </p>
+          <div class="notice-personal" style="text-align: left; max-width: 740px; margin-inline: auto;">
+            <strong>🔒 100% In-House Direct Advertiser Desk:</strong> ZoneAds is an independent performance marketing advertiser. This workspace is our private operational tool for managing our own verified ad accounts. It is <strong>not a SaaS product, not for sale to other businesses, and not accessible to any third party.</strong>
           </div>
         </div>
 
-        <div class="campaign-card rv" aria-label="Internal Campaign Review Desk">
-          <div class="campaign-card-head">
-            <strong>ZoneAds / In-House Campaign Desk</strong>
-            <span>DIRECT ADVERTISER</span>
+        <!-- FULL REALISTIC MOCKUP OF THE ACTUAL ZONEADS DASHBOARD -->
+        <div class="dashboard-preview rv" id="workbench">
+          <div class="db-header">
+            <div class="db-badge-group">
+              <span class="db-dot"></span>
+              <span class="db-title">ZoneAds In-House Media Suite</span>
+              <span class="db-pill">v2.4 Proprietary</span>
+              <span class="db-pill db-pill-green">TikTok API: Authorized</span>
+            </div>
+            <div class="db-user">
+              <span>Operator:</span>
+              <strong>Faisal Yahaya (Direct Advertiser)</strong>
+            </div>
           </div>
-          <div class="campaign-progress" aria-hidden="true"><i class="done"></i><i class="done"></i><i class="done"></i><i></i></div>
-          <div class="campaign-field">
-            <small>Advertiser Account</small>
-            <strong>Owned TikTok Ads Manager account selected by team</strong>
-          </div>
-          <div class="campaign-field-row">
-            <div class="campaign-field"><small>Objective</small><strong>Conversions / Web Sales</strong></div>
-            <div class="campaign-field"><small>Daily Budget</small><strong>£250.00</strong></div>
-          </div>
-          <div class="campaign-field">
-            <small>Creative & Landing Page</small>
-            <strong>In-house vertical video · https://zoneadsai.com/campaign</strong>
-          </div>
-          <div class="campaign-review">
-            <small>Human confirmation required: our media buyers review creative, destination, and budget before any API submission.</small>
-            <span class="button button-gold">Operator Approved</span>
+
+          <div class="db-body">
+            <!-- Sidebar mirroring actual dashboard -->
+            <aside class="db-sidebar">
+              <span class="db-sidebar-label">Campaign Ops</span>
+              <div class="db-nav-item active">🚀 Campaign Board</div>
+              <div class="db-nav-item">⚡ CBO Auto-Scaler</div>
+              <div class="db-nav-item">🛑 Stop-Loss Watch</div>
+              <div class="db-nav-item">⚖️ Appeal Monitor</div>
+
+              <span class="db-sidebar-label">Creative & Assets</span>
+              <div class="db-nav-item">🎬 Spark Ads Lab</div>
+              <div class="db-nav-item">🔍 Hook OCR Review</div>
+              <div class="db-nav-item">📁 UGC Video Library</div>
+
+              <span class="db-sidebar-label">Attribution & Sync</span>
+              <div class="db-nav-item">📊 Real-Time PnL</div>
+              <div class="db-nav-item">🎯 Lander Routes</div>
+              <div class="db-nav-item">🛡️ Account Litmus</div>
+            </aside>
+
+            <!-- Main Panel with Dummy Data -->
+            <div class="db-content">
+              <div class="db-metrics">
+                <div class="db-metric-card">
+                  <small>Today's Media Spend</small>
+                  <strong>£1,248.50</strong>
+                  <span>+14.2% vs yesterday</span>
+                </div>
+                <div class="db-metric-card">
+                  <small>Conversions Tracked</small>
+                  <strong>218 Sales</strong>
+                  <span>£5.72 Avg CPA</span>
+                </div>
+                <div class="db-metric-card">
+                  <small>Active Blended ROAS</small>
+                  <strong>3.94x</strong>
+                  <span>Above 3.2x target</span>
+                </div>
+                <div class="db-metric-card">
+                  <small>Active Ad Accounts</small>
+                  <strong>4 Connected</strong>
+                  <span>100% Owned by Faisal</span>
+                </div>
+              </div>
+
+              <div class="db-table-card">
+                <div class="db-table-head">
+                  <h3>Active TikTok Campaigns (In-House Media Buying)</h3>
+                  <span class="db-pill">Auto-Syncing with Ads Manager</span>
+                </div>
+                <table class="db-table">
+                  <thead>
+                    <tr>
+                      <th>Campaign Structure</th>
+                      <th>Objective</th>
+                      <th>Daily CBO</th>
+                      <th>Spend Today</th>
+                      <th>CPA</th>
+                      <th>ROAS</th>
+                      <th>Delivery Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <strong>UK-FIN-MONZO-REWARD-CBO</strong><br>
+                        <span class="db-code">Spark Code: tt:spark:91842a</span>
+                      </td>
+                      <td>Conversions</td>
+                      <td>£450.00</td>
+                      <td>£342.50</td>
+                      <td>£8.15</td>
+                      <td><strong>3.82x</strong></td>
+                      <td><span class="db-tag db-tag-active">● Delivering</span></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <strong>UK-ECO-SHEIN-HOOK-ROTATION</strong><br>
+                        <span class="db-code">UGC Creative: hook-03.mp4</span>
+                      </td>
+                      <td>Conversions</td>
+                      <td>£500.00</td>
+                      <td>£420.00</td>
+                      <td>£3.56</td>
+                      <td><strong>4.15x</strong></td>
+                      <td><span class="db-tag db-tag-active">● Delivering</span></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <strong>UK-APP-VINTED-UGC-SPARK-02</strong><br>
+                        <span class="db-code">Spark Code: tt:spark:41029b</span>
+                      </td>
+                      <td>App Installs</td>
+                      <td>£350.00</td>
+                      <td>£281.00</td>
+                      <td>£4.39</td>
+                      <td><strong>3.60x</strong></td>
+                      <td><span class="db-tag db-tag-active">● Delivering</span></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <strong>GLOBAL-SUB-TRIAL-AUTUMN</strong><br>
+                        <span class="db-code">Creative: trial-lifestyle.mp4</span>
+                      </td>
+                      <td>Web Traffic</td>
+                      <td>£150.00</td>
+                      <td>£65.00</td>
+                      <td>£21.66</td>
+                      <td>0.92x</td>
+                      <td><span class="db-tag db-tag-paused">⏸ Paused (Stop-Loss)</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section section-white" id="workflow">
+    <section class="section section-white" id="features">
       <div class="shell">
         <div class="section-head rv">
-          <span class="eyebrow">Our Media Buying Workflow</span>
+          <span class="eyebrow">Why We Use the TikTok Marketing API</span>
           <div>
-            <h2>How our in-house team deploys and manages campaigns.</h2>
-            <p>Our media buyers connect creative production directly with TikTok Ads Manager execution, ensuring tight budget oversight and validated return on ad spend for our direct campaigns.</p>
+            <h2>How this internal workspace interacts with TikTok APIs.</h2>
+            <p>Our personal dashboard integrates with official TikTok endpoints to replace manual repetitive tasks, enforce daily spend stop-loss safeguards, and manage creative rotation across our owned accounts.</p>
           </div>
         </div>
         <div class="feature-grid feature-grid-four">
           <article class="feature-card rv">
-            <span class="feature-number">01 / PRODUCTION</span>
-            <h3>Original Creative Production</h3>
-            <p>We produce vertical video creatives in-house and license creator UGC through official Spark Ads authorization codes for our direct-to-consumer product campaigns.</p>
+            <span class="feature-number">01 / CAMPAIGN MANAGEMENT</span>
+            <h3>Direct Campaign Deployment</h3>
+            <p>We use the <code>/campaign/create/</code> and <code>/adgroup/create/</code> APIs to structure auction campaigns, set CBO daily budgets, and configure targeting for our direct-to-consumer offers under operator confirmation.</p>
           </article>
           <article class="feature-card rv">
-            <span class="feature-number">02 / STRUCTURE</span>
-            <h3>Campaign Structuring</h3>
-            <p>Our team configures auction campaigns, ad groups, and target demographics, reviewing ad destinations and daily spend caps prior to publication.</p>
+            <span class="feature-number">02 / CREATIVE & SPARK ADS</span>
+            <h3>Video Upload & Spark Authorization</h3>
+            <p>We upload vertical video assets created by our in-house team directly via the <code>/file/video/ad/upload/</code> endpoint and link authorized creator Spark Ads authorization codes to our campaign ad drafts.</p>
           </article>
           <article class="feature-card rv">
-            <span class="feature-number">03 / ATTRIBUTION</span>
-            <h3>Direct Attribution</h3>
-            <p>We reconcile platform-reported metrics with our first-party conversion tracking to maintain profitable CPA and ROAS across all running ad sets.</p>
+            <span class="feature-number">03 / REPORTING RECONCILIATION</span>
+            <h3>Automated Spend & Metric Sync</h3>
+            <p>The dashboard queries the <code>/report/integrated/get/</code> endpoint hourly to pull real-time impressions, clicks, and spend data, reconciling them with our landing page conversions without manual CSV downloads.</p>
           </article>
           <article class="feature-card rv">
-            <span class="feature-number">04 / SAFETY</span>
-            <h3>Human-in-the-Loop Controls</h3>
-            <p>Every budget change, creative upload, and ad status update is confirmed by our internal media buyers. No automated uncontrolled spending occurs.</p>
+            <span class="feature-number">04 / STOP-LOSS SAFEGUARD</span>
+            <h3>Operator-Enforced Spend Caps</h3>
+            <p>Our workspace monitors ad delivery against pre-set CPA thresholds. If an ad set exceeds our target acquisition cost, our media buyer is alerted to pause or reallocate budget, preventing wasted ad spend.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section section-white" id="permissions">
+    <section class="section section-dark dark" id="ownership">
       <div class="shell split">
         <div class="split-copy rv">
-          <span class="eyebrow">Compliance & Account Standards</span>
-          <h2>Direct advertiser ownership. Complete spend control.</h2>
-          <p>ZoneAds operates solely on advertiser accounts owned and authorized by our team. We do not sell accounts, bypass platform review, or manage third-party client funds.</p>
+          <span class="eyebrow">Account Ownership & Direct Billing</span>
+          <h2>We own our accounts. We pay TikTok directly.</h2>
+          <p>ZoneAds operates strictly as a direct advertiser. We do not provide, sell, or rent advertising accounts to third parties, and we do not manage third-party client funds.</p>
           <ul class="check-list">
-            <li>No TikTok password collection — official OAuth authorization only</li>
-            <li>No third-party client onboarding or public subscriptions</li>
-            <li>No sale, lease, or provisioning of advertising accounts</li>
-            <li>No access to unrelated TikTok accounts or private messages</li>
-            <li>Strict human operator confirmation on all ad budgets and changes</li>
+            <li><strong>Sole Operator:</strong> Used only by Faisal Yahaya and our in-house media buyers</li>
+            <li><strong>Official OAuth:</strong> Connected exclusively through TikTok’s OAuth 2.0 authorization</li>
+            <li><strong>Direct Platform Billing:</strong> TikTok bills our team directly for all media spend</li>
+            <li><strong>No Passwords Collected:</strong> Zero credential harvesting or password storage</li>
+            <li><strong>Immediate Revocation:</strong> Authorization can be revoked anytime via TikTok Ads Manager</li>
           </ul>
         </div>
         <div class="permission-grid rv">
           <article class="permission-card">
-            <strong>Official OAuth Connection</strong>
-            <p>Our internal desk connects to our authorized TikTok Ads Manager accounts using TikTok's standard OAuth protocol without handling passwords.</p>
-            <code>OAUTH 2.0 · INTERNAL ONLY</code>
+            <strong>Owned Advertiser Accounts</strong>
+            <p>We connect only TikTok Ads Manager accounts owned, verified, and funded directly by our team.</p>
+            <code>DIRECT ADVERTISER · OWNED ACCOUNTS</code>
           </article>
           <article class="permission-card">
-            <strong>Minimal Necessary Scopes</strong>
-            <p>Permissions are strictly scoped to managing our own campaigns, video assets, and performance reporting.</p>
-            <code>SCOPED · ADS & CREATIVES</code>
+            <strong>Bare-Minimum Scopes</strong>
+            <p>Our API access is strictly limited to Ads Management, Creative Management, and Reporting.</p>
+            <code>SCOPES · ADS, CREATIVES, REPORTS</code>
           </article>
           <article class="permission-card">
-            <strong>Direct Platform Billing</strong>
-            <p>ZoneAds pays TikTok directly for all advertising charges. We bill all media spend to our own corporate accounts.</p>
-            <code>DIRECT BILLING · TIKTOK DIRECT</code>
+            <strong>Human Confirmation Required</strong>
+            <p>Every ad group creation, budget revision, and creative publication requires manual operator click.</p>
+            <code>SAFETY · OPERATOR SUPERVISED</code>
           </article>
           <article class="permission-card">
-            <strong>Immediate Access Control</strong>
-            <p>Authorization tokens can be revoked at any time via TikTok account settings, immediately cutting off API connectivity.</p>
-            <code>REVOCATION · INSTANT REVOKE</code>
+            <strong>Private Internal Server</strong>
+            <p>The workspace runs on our internal infrastructure with restricted access. No public signup exists.</p>
+            <code>HOSTING · INTERNAL DESK ONLY</code>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section section-dark dark">
-      <div class="shell split">
-        <div class="split-copy rv">
-          <span class="eyebrow">Data Governance</span>
-          <h2>Secure credentials. Purpose-limited data.</h2>
-          <p>Our API integration processes only the data required to run our in-house advertising operations. All credentials are encrypted and restricted to authorized team operators.</p>
-          <div class="hero-actions">
-            <a class="button button-gold" href="../privacy.html#tiktok">Read Data Policy</a>
-            <a class="button button-ghost" href="../account-deletion/">Data Deletion Instructions</a>
-          </div>
-        </div>
-        <ul class="check-list rv">
-          <li>API tokens are stored server-side and encrypted at rest using AES-256</li>
-          <li>Access is restricted strictly to authorized ZoneAds media buyers</li>
-          <li>Unnecessary platform logs are automatically purged on a rolling schedule</li>
-          <li>Disconnection instantly purges stored tokens from active records</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="section">
+    <section class="section" id="faq">
       <div class="shell">
         <div class="section-head rv">
           <span class="eyebrow">Frequently Asked Questions</span>
-          <div><h2>Clarifications on our direct advertiser setup.</h2></div>
+          <div><h2>Direct Advertiser Verification FAQ</h2></div>
         </div>
         <div class="faq rv">
-          <details>
-            <summary>Is ZoneAds a SaaS platform or commercial service for other businesses?</summary>
-            <p>No. ZoneAds is not a SaaS platform, public software tool, or marketing agency for hire. We are an independent performance marketing group that runs advertising for our own e-commerce and consumer brand campaigns. This workspace is our internal operational console used strictly by our own media-buying team.</p>
+          <details open>
+            <summary>Is ZoneAds a SaaS platform or commercial tool for external clients?</summary>
+            <p><strong>No.</strong> ZoneAds is not a SaaS platform, commercial software, or an agency providing services to third parties. We are an independent performance marketing and direct advertising group. This workspace is our private, internal media-buying console built and operated solely by Faisal Yahaya to manage our own direct-to-consumer advertising campaigns.</p>
           </details>
           <details>
-            <summary>Who owns the advertising accounts and controls ad spending?</summary>
-            <p>ZoneAds is the direct advertiser. We own and operate our TikTok Ads Manager accounts, set our own campaign budgets, and pay TikTok directly for all advertising costs. We do not provide, sell, or rent advertising accounts to third parties.</p>
+            <summary>Who owns the TikTok advertising accounts and pays for ad spend?</summary>
+            <p>ZoneAds is the direct advertiser. We own and operate our TikTok Ads Manager accounts, set our own campaign budgets, and pay TikTok directly for all advertising charges. We do not manage client ad accounts, resell accounts, or manage external media budgets.</p>
           </details>
           <details>
-            <summary>What TikTok Marketing API permissions are used?</summary>
-            <p>We use the official TikTok Marketing API strictly to manage our own campaigns, ad groups, video creatives, and performance reporting under direct operator supervision. We do not request unrelated social, messaging, or financial administration scopes.</p>
+            <summary>What specific TikTok Marketing API permissions are requested?</summary>
+            <p>We request access only to core marketing endpoints: <strong>Ad Account Management</strong> (to identify our connected accounts), <strong>Ads Management</strong> (to draft campaigns and ad groups), <strong>Creative Management</strong> (to upload our video assets), and <strong>Reporting</strong> (to pull hourly spend and performance metrics). We do not request social, messaging, or financial administration permissions.</p>
           </details>
           <details>
-            <summary>Can external advertisers sign up or use this workspace?</summary>
-            <p>No. There is no external registration, client onboarding, or public software access. The workspace is restricted strictly to authenticated ZoneAds media buyers.</p>
+            <summary>Can external users or clients sign up for an account?</summary>
+            <p><strong>No.</strong> There is no external registration, client onboarding, subscription pricing, or public access. The workspace is restricted strictly to our internal media-buying operations.</p>
           </details>
           <details>
-            <summary>Is ZoneAds affiliated with or endorsed by TikTok?</summary>
-            <p>No. ZoneAds is an independent performance marketing business. It is not endorsed by, affiliated with, or an official partner of TikTok or ByteDance. The TikTok name is used strictly to identify the advertising platform integration.</p>
+            <summary>How are credentials and data stored?</summary>
+            <p>OAuth tokens are stored securely on our private backend, encrypted at rest using AES-256. We never collect or handle TikTok account passwords. You can revoke authorization at any time directly through TikTok Ads Manager, which immediately stops all API calls.</p>
           </details>
         </div>
       </div>
@@ -210,10 +528,10 @@
     <section class="section-sm">
       <div class="shell cta-card rv">
         <div>
-          <h2>Media Inquiries & Platform Operations</h2>
-          <p>For questions regarding our advertising operations, campaign compliance, or data policies, contact our team.</p>
+          <h2>Direct Advertising Operations & Compliance</h2>
+          <p>Questions regarding our direct advertising operations, API integration compliance, or data governance.</p>
         </div>
-        <a class="button button-gold" href="../support/">Contact Team <span class="arrow">→</span></a>
+        <a class="button button-gold" href="mailto:support@zoneadsai.com">Contact Operator: support@zoneadsai.com <span class="arrow">→</span></a>
       </div>
     </section>
   </main>
@@ -226,30 +544,30 @@
             <img src="../logo-64.png" alt="" width="31" height="31">
             <span>ZoneAds <span class="brand-mark">AI</span></span>
           </a>
-          <p>Independent performance marketing and direct-response advertising group.</p>
+          <p>Proprietary direct-response performance advertising and media-buying operations.</p>
         </div>
         <div class="footer-col">
-          <strong>Advertising</strong>
-          <a href="../#verticals">Verticals</a>
-          <a href="../#operations">Operations</a>
-          <a href="./">TikTok Ads Desk</a>
+          <strong>Workspace</strong>
+          <a href="#workbench">Campaign Desk</a>
+          <a href="#features">API Capabilities</a>
+          <a href="#ownership">Account Ownership</a>
         </div>
         <div class="footer-col">
-          <strong>Data & Policies</strong>
+          <strong>Data Governance</strong>
           <a href="../privacy.html">Privacy Policy</a>
-          <a href="../account-deletion/">Account Deletion</a>
-          <a href="#permissions">Compliance</a>
+          <a href="../account-deletion/">Data Deletion</a>
+          <a href="#faq">Direct Advertiser FAQ</a>
         </div>
         <div class="footer-col">
-          <strong>Contact</strong>
+          <strong>Operator Contact</strong>
           <a href="../terms.html">Terms of Service</a>
-          <a href="../support/">Support</a>
+          <a href="../support/">Support Desk</a>
           <a href="mailto:support@zoneadsai.com">support@zoneadsai.com</a>
         </div>
       </div>
       <div class="footer-bottom">
-        <span>© 2026 ZoneAds AI. All rights reserved.</span>
-        <span>ZoneAds AI is an independent direct advertiser and is not endorsed by or affiliated with TikTok.</span>
+        <span>© 2026 ZoneAds AI · Operated by Faisal Yahaya. All rights reserved.</span>
+        <span>ZoneAds is an independent direct advertiser and is not endorsed by, affiliated with, or an official partner of TikTok.</span>
       </div>
     </div>
   </footer>
